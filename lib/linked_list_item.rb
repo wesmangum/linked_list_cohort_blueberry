@@ -1,13 +1,14 @@
 class LinkedListItem
   include Comparable
-  attr_reader :payload, :next_item
+  attr_accessor :payload
+  attr_reader :next_item
 
   def initialize(value)
     @payload = value
   end
 
   def next_item=(other_item)
-    if self == other_item
+    if self === other_item
       raise ArgumentError
     else
       @next_item = other_item
